@@ -23,7 +23,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="p-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-pink-100 to-yellow-50 p-8">
       <h1 className="text-4xl font-extrabold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-blue-400 to-yellow-400 animate-gradient">📚 My Whimsical Library</h1>
       <div className="flex overflow-x-auto gap-8 max-w-6xl mx-auto pb-8">
         {allBooks.map(book => (
@@ -103,27 +103,6 @@ export default function Dashboard() {
           </div>
         </div>
       )}
-      <style jsx>{`
-        @keyframes gradient {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 4s ease-in-out infinite;
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-float { animation: float 3s ease-in-out infinite; }
-        .animate-bounce { animation: bounce 1s infinite alternate; }
-        @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        .animate-fade-in { animation: fade-in 0.5s; }
-      `}</style>
     </div>
   );
 }

@@ -32,6 +32,8 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </nav>
       </header>
+      {/* Only one global style block is needed, see below */}
+      <main className="flex-grow">{children}</main>
       <style jsx global>{`
         @keyframes gradient {
           0%, 100% { background-position: 0% 50%; }
@@ -41,8 +43,18 @@ export default function Layout({ children }: LayoutProps) {
           background-size: 200% 200%;
           animation: gradient 4s ease-in-out infinite;
         }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-bounce { animation: bounce 1s infinite alternate; }
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-fade-in { animation: fade-in 0.5s; }
       `}</style>
-      <main className="flex-grow">{children}</main>
     </div>
   );
 }
