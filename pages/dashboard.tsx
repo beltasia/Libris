@@ -23,7 +23,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-pink-100 to-yellow-50 p-8">
+    <div className="p-8">
       <h1 className="text-4xl font-extrabold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-blue-400 to-yellow-400 animate-gradient">📚 My Whimsical Library</h1>
       <div className="flex overflow-x-auto gap-8 max-w-6xl mx-auto pb-8">
         {allBooks.map(book => (
