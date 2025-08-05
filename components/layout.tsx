@@ -25,24 +25,10 @@ export default function Layout({ children }: LayoutProps) {
       <header className="bg-white shadow-sm">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <Link href="/" className="text-xl font-bold text-indigo-600">
-              NovelApp
-            </Link>
-            {auth.currentUser ? (
-              <button 
-                onClick={handleLogout}
-                className="px-3 py-1 text-sm text-red-600 hover:text-red-800"
-              >
-                Sign Out
-              </button>
-            ) : (
-              <Link 
-                href="/login" 
-                className="px-3 py-1 text-sm text-indigo-600 hover:text-indigo-800"
-              >
-                Sign In
-              </Link>
-            )}
+            <span className="text-xl font-bold text-purple-700 select-none cursor-default">
+              Libris
+            </span>
+            {/* No sign in/out links on the main layout header for a cleaner look */}
           </div>
         </nav>
       </header>

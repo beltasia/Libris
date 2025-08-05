@@ -53,6 +53,7 @@ export default function Home() {
             <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-400 to-purple-200 animate-gradient">
               Welcome to Libris
             </h1>
+            <p className="text-lg text-purple-700 mt-2 font-semibold">Your magical library</p>
           </div>
 
           <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl shadow-xl p-8 border border-white border-opacity-30 w-full">
@@ -115,9 +116,6 @@ export default function Home() {
                 >
                   Sign up
                 </Link>
-              </p>
-              <p className="text-xs text-purple-500 mt-2">
-                <Link href="/dashboard" className="underline hover:text-purple-800">Go to Dashboard</Link>
               </p>
             </div>
           </div>
