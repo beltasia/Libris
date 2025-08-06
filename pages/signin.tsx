@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/services/firebase';
+import { createUserTrialData } from '@/utils/trial';
 
 function SigninPage() {
   const [email, setEmail] = useState('');
@@ -24,7 +25,9 @@ function SigninPage() {
       return;
     }
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      // Create trial data for the new user
+      await createUserTrialData(userCredential.user);
       router.push('/login');
     } catch (err: any) {
       setError(getAuthErrorMessage(err.code));

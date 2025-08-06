@@ -1,0 +1,33 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "userTrials",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "trialStatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "userTrials",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "trialStatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "trialExpiryDate",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
