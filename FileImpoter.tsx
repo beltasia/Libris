@@ -1,8 +1,12 @@
 import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
-export default function FileImporter({ onFileProcessed }) {
-  const onDrop = useCallback((acceptedFiles) => {
+interface FileImporterProps {
+  onFileProcessed: (content: string | ArrayBuffer | null) => void;
+}
+
+export default function FileImporter({ onFileProcessed }: FileImporterProps) {
+  const onDrop = useCallback((acceptedFiles: File[]) => {
     const reader = new FileReader();
     reader.onload = () => onFileProcessed(reader.result);
     reader.readAsText(acceptedFiles[0]);
